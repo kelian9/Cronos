@@ -72,168 +72,27 @@ export class ProductsComponent implements OnInit {
     parentArray = this.forShowMoreArray;
     if (this.buttonShowMore == "Показать еще") {
       //для мобильных
+      let a:number;
       if (document.documentElement.clientWidth <= 600) {
-        let a = this.array.length + 4;
-        if ((this.array[3] == parentArray[3]) && (parentArray.length >= a)) {
-          for (let i = this.array.length; i < a; i++) {
-            const element = parentArray[i];
-            this.array.push(element);
-          }
-        }
-        else {
-          for (let i = array.length; i < parentArray.length; i++) {
-            const element = parentArray[i];
-            this.array.push(element);
-          }
-          this.hide = true;
-          this.buttonShowMore = "Скрыть";
-        }
-        // if (this.array[3] == this.all[3]) {
-        //   if (this.all.length >= a) {
-        //     for (let i = this.array.length; i < a; i++) {
-        //       const element = this.all[i];
-        //       this.array.push(element);
-        //     }
-        //   }
-        //   else {
-        //     for (let i = this.array.length; i < this.all.length; i++) {
-        //       const element = this.all[i];
-        //       this.array.push(element);
-        //     }
-        //     this.buttonShowMore = "Скрыть";
-        //     this.hide = true;
-        //   }
-        // }
-        // else if (this.array[3] == this.facade[3]) {
-        //   if (this.facade.length >= a) {
-        //     for (let i = this.array.length; i < a; i++) {
-        //       const element = this.facade[i];
-        //       this.array.push(element);
-        //     }
-        //   }
-        //   else {
-        //     for (let i = this.array.length; i < this.facade.length; i++) {
-        //       const element = this.facade[i];
-        //       this.array.push(element);
-        //     }
-        //     this.buttonShowMore = "Скрыть";
-        //     this.hide = true;
-        //   }
-        // }
-        // else if (this.array[3] == this.pavingSlabs[3]) {
-        //   if (this.pavingSlabs.length >= a) {
-        //     for (let i = this.array.length; i < a; i++) {
-        //       const element = this.pavingSlabs[i];
-        //       this.array.push(element);
-        //     }
-        //   }
-        //   else {
-        //     for (let i = this.array.length; i < this.pavingSlabs.length; i++) {
-        //       const element = this.pavingSlabs[i];
-        //       this.array.push(element);
-        //     }
-        //     this.buttonShowMore = "Скрыть";
-        //     this.hide = true;
-        //   }
-        // }
-        // else if (this.array[3] == this.inDecoration[3]) {
-        //   if (this.inDecoration.length >= a) {
-        //     for (let i = this.array.length; i < a; i++) {
-        //       const element = this.inDecoration[i];
-        //       this.array.push(element);
-        //     }
-        //   }
-        //   else {
-        //     for (let i = this.array.length; i < this.inDecoration.length; i++) {
-        //       const element = this.inDecoration[i];
-        //       this.array.push(element);
-        //     }
-        //     this.buttonShowMore = "Скрыть";
-        //     this.hide = true;
-        //   }
-        // }
+        a = this.array.length + 4;
       }//для десктопа
       else {
-        let a = this.array.length + 10;
-        if ((this.array[3] == parentArray[3]) && (parentArray.length >= a)) {
-          for (let i = this.array.length; i < a; i++) {
-            const element = parentArray[i];
-            this.array.push(element);
-          }
-        }
-        else {
-          for (let i = array.length; i < parentArray.length; i++) {
-            const element = parentArray[i];
-            this.array.push(element);
-          }
-          this.hide = true;
-          this.buttonShowMore = "Скрыть";
-        }
-        // if (this.array[9] == this.all[9]) {
-        //   if (this.all.length >= a) {
-        //     for (let i = this.array.length; i < a; i++) {
-        //       const element = this.all[i];
-        //       this.array.push(element);
-        //     }
-        //   }
-        //   else {
-        //     for (let i = this.array.length; i < this.all.length; i++) {
-        //       const element = this.all[i];
-        //       this.array.push(element);
-        //     }
-        //     this.buttonShowMore = "Скрыть";
-        //     this.hide = true;
-        //   }
-        // }
-        // else if (this.array[9] == this.facade[9]) {
-        //   if (this.facade.length >= a) {
-        //     for (let i = this.array.length; i < a; i++) {
-        //       const element = this.facade[i];
-        //       this.array.push(element);
-        //     }
-        //   }
-        //   else {
-        //     for (let i = this.array.length; i < this.facade.length; i++) {
-        //       const element = this.facade[i];
-        //       this.array.push(element);
-        //     }
-        //     this.buttonShowMore = "Скрыть";
-        //     this.hide = true;
-        //   }
-        // }
-        // else if (this.array[9] == this.pavingSlabs[9]) {
-        //   if (this.pavingSlabs.length >= a) {
-        //     for (let i = this.array.length; i < a; i++) {
-        //       const element = this.pavingSlabs[i];
-        //       this.array.push(element);
-        //     }
-        //   }
-        //   else {
-        //     for (let i = this.array.length; i < this.pavingSlabs.length; i++) {
-        //       const element = this.pavingSlabs[i];
-        //       this.array.push(element);
-        //     }
-        //     this.buttonShowMore = "Скрыть";
-        //     this.hide = true;
-        //   }
-        // }
-        // else if (this.array[9] == this.inDecoration[9]) {
-        //   if (this.inDecoration.length >= a) {
-        //     for (let i = this.array.length; i < a; i++) {
-        //       const element = this.inDecoration[i];
-        //       this.array.push(element);
-        //     }
-        //   }
-        //   else {
-        //     for (let i = this.array.length; i < this.inDecoration.length; i++) {
-        //       const element = this.inDecoration[i];
-        //       this.array.push(element);
-        //     }
-        //     this.buttonShowMore = "Скрыть";
-        //     this.hide = true;
-        //   }
-        // }
+        a = this.array.length + 10;
       }  
+      if ((this.array[3] == parentArray[3]) && (parentArray.length >= a)) {
+        for (let i = this.array.length; i < a; i++) {
+          const element = parentArray[i];
+          this.array.push(element);
+        }
+      }
+      else {
+        for (let i = array.length; i < parentArray.length; i++) {
+          const element = parentArray[i];
+          this.array.push(element);
+        }
+        this.hide = true;
+        this.buttonShowMore = "Скрыть";
+      }
     }
     //если нужно скрыть
     else {
