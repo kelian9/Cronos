@@ -1,0 +1,171 @@
+%display-flex
+    display: flex
+    display: -webkit-flex
+    justify-content: space-between
+    align-items: center
+    font-family: Roboto//чтобы не создавать лишних оберток
+.active-btn
+    border: 2px solid #B40101
+h1
+    margin-top: 20px
+    font-weight: bold
+    line-height: 34px
+    font-size: 24px
+    color: #000000
+ul
+    @extend %display-flex
+    width: 100%
+    height: 40px
+    margin-left: 0
+    margin-top: 10px
+    padding: 0
+    justify-content: flex-start
+    list-style-type: none
+    &:last-child
+        border-right: 0
+    &:first-child
+        margin-left: 0
+    li
+        box-sizing: border-box
+        cursor: pointer
+        padding: 5px 20px
+        border-radius: 4px
+        line-height: 32px
+        font-size: 14px
+        text-align: center
+        color: #574B4B
+        transition: 0.5s
+    span
+        font-weight: 200
+        font-size: 30px
+        color:#EEEEEE
+.cards-outer-container
+    width: 100%
+    margin-top: 15px
+    min-height: 550px
+    @extend %display-flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-between
+    .cards-container
+        margin: 0
+        padding: 0
+        width: 100%
+        height: 88%
+        @extend %display-flex
+        flex-direction: row
+        flex-wrap: wrap
+        .card
+            margin-top: 10px
+            width: 17%
+            height: 45%
+            @extend %display-flex
+            flex-direction: column
+            align-items: flex-start
+            .image-container
+                width: 100%
+                height: 158px
+                position: relative
+                img
+                    width: 100%
+                    height: 100%
+                    border-radius: 3px
+                .colors
+                    position: absolute
+                    left: 4px
+                    bottom: 10px
+                    @extend %display-flex
+                    justify-content: flex-start
+                    width: 50%
+                    height: 14px
+                    z-index: 100
+                    .color
+                        margin-left: 6px
+                        width: 14px
+                        height: 14px
+                        border-radius: 2px
+                        box-sizing: border-box
+                        cursor: pointer
+                    .beige
+                        background: #D7CCB5
+                    .black
+                        background: #000000
+                    .white
+                        background: #ffffff
+                    .brown
+                        background: #B76F58
+            h3
+                font-weight: bold
+                line-height: 24px
+                font-size: 15px
+                text-decoration-line: underline
+                color: #B40101
+                padding: 0
+                margin: 0
+                margin-top: 5px
+            .price-container
+                width: 100%
+                height: 30px
+                @extend %display-flex
+                .price
+                    line-height: 32px
+                    font-size: 15px
+                    text-align: center
+                    text-decoration-line: line-through
+                    color: #B2B2B2
+                .sale
+                    line-height: 24px
+                    font-size: 15px
+                    text-align: right
+                    color: #000000
+                    span
+                        color: #B2B2B2
+                        font-size: 14px
+                        line-height: 14px
+    .button-container
+        height: 5%
+        width: 100%
+        text-align: center
+        button
+            cursor: pointer
+            width: 178px
+            height: 42px
+            background-color: #ffffff
+            border: 1px solid #DFDFDF
+            border-radius: 4px
+            line-height: 24px
+            font-size: 15px
+            color: #000000
+            font-weight: 500
+            font-family: Roboto
+            outline: none
+            img
+                transition: 0.6s
+@media screen and (max-width: 600px)
+    ul
+        overflow-x: scroll
+        height: 55px
+        li
+            line-height: 20px
+    .cards-outer-container
+        min-height: 950px
+        .cards-container
+            flex-direction: column
+            justify-content: space-between
+            flex-wrap: nowrap
+            height: 92%
+            .card
+                width: 100%
+                height: 200px
+                .image-container
+                    .colors
+                        width: 80%
+                        bottom: 15px
+                        left: 9px
+                        .color
+                            width: 20px
+                            height: 20px
+.selected
+    border: 2px solid #FF8787
+.rotate
+    transform: rotate(180deg)

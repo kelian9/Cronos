@@ -1,0 +1,30 @@
+<h1>Продукция</h1>
+<ul>
+  <li (click)="getArray(productsButtons[0].array, 0)" [ngClass]="{'active-btn': active[0]}">{{productsButtons[0].text}}</li><span>|</span>
+  <li (click)="getArray(productsButtons[1].array, 1)" [ngClass]="{'active-btn': active[1]}">{{productsButtons[1].text}}</li><span>|</span>
+  <li (click)="getArray(productsButtons[2].array, 2)" [ngClass]="{'active-btn': active[2]}">{{productsButtons[2].text}}</li><span>|</span>
+  <li class="last-li" (click)="getArray(productsButtons[3].array, 3)" [ngClass]="{'active-btn': active[3]}">{{productsButtons[3].text}}</li><span>|</span>
+</ul>
+<div class="cards-outer-container">
+  <div class="cards-container">
+    <div class="card" *ngFor="let elem of array">
+      <div class="image-container">
+        <img [src]="elem.href" alt="image" class="card-image">
+        <div class="colors">
+          <div class="color beige" [ngClass]="{'selected': selected(elem, elem.colors.beige)}" *ngIf="elem.colors.beige" (click)="changeColor(elem, 'beige')"></div>
+          <div class="color black" [ngClass]="{'selected': selected(elem, elem.colors.black)}" *ngIf="elem.colors.black" (click)="changeColor(elem, 'black')"></div>
+          <div class="color brown" [ngClass]="{'selected': selected(elem, elem.colors.brown)}" *ngIf="elem.colors.brown" (click)="changeColor(elem, 'brown')"></div>
+          <div class="color white" [ngClass]="{'selected': selected(elem, elem.colors.white)}" *ngIf="elem.colors.white" (click)="changeColor(elem, 'white')"></div>
+        </div>
+      </div>
+      <h3 class="card-title">{{ elem.title }}</h3>
+      <div class="price-container">
+        <p class="price">{{ elem.price }} ₽</p>
+        <p class="sale">{{ elem.sale }} ₽<span> / м2</span></p>
+      </div>
+    </div>
+  </div>
+  <div class="button-container">
+      <button (click)="showMore(array)" *ngIf="canShowMore">{{ buttonShowMore }} &nbsp;&nbsp;&nbsp;<img src="../assets/images/arrow.svg" [ngClass]="{'rotate': hide}" alt=""></button>
+  </div>
+</div>

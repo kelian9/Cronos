@@ -1,0 +1,20 @@
+<div class="container">
+  <img [src]="projectSelected.src" alt="Photo of the project" class="project-image"/>
+  <div class="text-container">
+    <div class="heading">
+      <h1>Проекты</h1>
+      <p>Выполненные с использованием нашего декоративного камня.</p>
+    </div>
+    <div class="switches">
+      <button (click)="prevSlide(projectSelected.i)"><img class="prev-btn" src="../assets/images/projects/switch.svg" alt="Previous slide"></button>
+      <button (click)="nextSlide(projectSelected.i)" class="next"><img src="../assets/images/projects/switch.svg" alt="Next slide"></button>
+    </div>
+  </div>
+  <div class="slides-container">
+    <div class="slides-inner-container" [ngClass]="{'swipe-next' : swipeNext, 'swipe-next-second' : swipeNextSecond}">
+        <div class="image-container" *ngFor="let project of projects" [ngClass]="{selected: project.selected}">
+            <img [src]="project.src" alt="project photo" (click)="selectProject(project)">
+        </div>
+    </div>
+  </div>
+</div>

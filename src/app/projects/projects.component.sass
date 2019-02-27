@@ -1,0 +1,157 @@
+%display-flex
+    display: flex
+    display: -webkit-flex
+    justify-content: space-between
+.project-image
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    z-index: 1
+    transition: 0.3s
+.container
+    width: 100%
+    height: 100%
+    position: relative
+    z-index: 2
+    font-family: 'Raleway', sans-serif
+    .text-container
+        z-index: 2
+        width: 79%
+        height: 60px
+        margin-left: 10.5%
+        position: relative
+        top: 450px
+        @extend %display-flex
+        align-items: center
+        text-align: left
+        .heading
+            width: 50%
+            height: 100%
+            h1
+                font-weight: 900
+                line-height: 34px
+                font-size: 26px
+                color: #FFFFFF
+            p
+                line-height: 24px
+                font-size: 16px
+                color: #FFFFFF
+                opacity: 0.7
+        .switches
+            z-index: 3
+            width: 80px
+            height: 30px
+            @extend %display-flex
+            align-items: center
+            button
+                width: 50%
+                height: 100%
+                border: 0
+                border-radius: 4px 0 0 4px
+                background: #5F4D4D
+                opacity: 0.7
+                @extend %display-flex
+                align-items: center
+                justify-content: space-around
+                cursor: pointer
+                transition: 0.4s
+                outline: none
+                &:hover
+                    transform: translateX(-5px)
+                    box-shadow: 0 0 5px white
+                    img
+                        transform: rotate(180deg) scale(1.2)
+                    .prev-btn
+                        transform: scale(1.2)
+                img
+                    width: 8px
+                    transition: 0.3s
+            .next
+                border-radius: 0 4px 4px 0
+                background: #ED3333
+                &:hover
+                    transform: translateX(5px)
+                img
+                    transform: rotate(180deg)
+.slides-container
+    position: relative
+    top: 480px
+    z-index: 2000
+    width: 79%
+    margin-left: 10.5%
+    height: 128px
+    -webkit-overflow-scrolling: touch
+    overflow: hidden
+    .slides-inner-container
+        position: absolute
+        left: -10px
+        min-width: 100%
+        height: 100%
+        display: flex
+        display: -webkit-flex
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
+        transition: 0.6s
+        div
+            height: 120px
+            width: 166px
+            margin-left: 12px
+            border-radius: 3px
+            transition: 0.3s
+            cursor: pointer
+            box-sizing: border-box
+            &:hover
+                transform: scale(1.05)
+                border-radius: 6px
+            img
+                height: 100%
+                width: 100%
+                border-radius: 3px
+                &:hover
+                    border-radius: 6px
+.selected
+    border: 2px solid #FF3030
+.swipe-next
+    transform: translateX(-1058px)
+.swipe-next-second
+    transform: translateX(-2116px)
+@media screen and (max-width: 600px)
+    .container
+        background: #191924
+        display: flex
+        display: -webkit-flex
+        flex-direction: column
+        justify-content: space-between
+        .text-container
+            position: static
+            top: 0px
+            width: 90%
+            height: 15%
+            margin-left: 5%
+            .heading
+                width: 100%
+            .switches
+                display: none
+    .slides-container
+        width: 90%
+        height: 72px
+        margin-left: 5%
+        position: relative
+        top: -50px
+        left: -2px
+        overflow-x: scroll
+        .slides-inner-container
+            position: absolute
+            overflow-x: scroll
+            div
+                width: 117px
+                height: 65px
+    .project-image
+        position: absolute
+        top: 100px
+        left: 5%
+        width: 90%
+        height: 200px

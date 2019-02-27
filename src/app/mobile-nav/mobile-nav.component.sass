@@ -1,0 +1,96 @@
+%display-flex-column
+    display: flex
+    display: -webkit-flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
+.container
+    position: relative
+    top: 10px
+    width: 65px
+    height: 100%
+    display: flex
+    display: -webkit-flex
+    justify-content: space-between
+    align-items: center
+    a
+        width: 18px
+        img
+            width: 100%
+button
+    width: 30px
+    height: 30px
+    border: 0
+    position: relative
+    top: -2px
+    background: transparent
+    color: #ffffff
+    cursor: pointer
+    outline: none
+    @extend %display-flex-column
+    flex-direction: row
+    justify-content: space-around
+    span,
+    span::before,
+    span::after
+	    height: 2px
+	    width: 22px
+	    position: absolute
+        display: block
+	    top: 50%
+	    background-color: #ffffff
+	    border-radius: 4px
+	    margin-top: 0px
+	    transition: 0.7s linear
+	    z-index: 201
+    span::before,
+    span::after
+	    content: ""
+	    left: 0
+	    width: 22px
+    span::before
+	    transform: translateY(-8px)
+    span::after
+	    transform: translateY(6px)
+	    width: 22px
+nav
+    position: absolute
+    top: 65px
+    left: 0
+    width: 100%
+    height: 200px
+    transition: 1s
+    transform: translateX(100%)
+    z-index: 1000
+    margin: 0
+    padding: 0
+    background: linear-gradient(180deg, #1A1B20 0%, #191924 100%)
+    background-size: cover
+    list-style-type: none
+    ul
+        width: 100%
+        height: 100%
+        list-style-type: none
+        margin: 0
+        padding: 0
+        &:first-child
+            border-top: 1px solid aliceblue
+        li
+            width: 100%
+            height: 25%
+            border-bottom: 1px solid aliceblue
+            text-align: center
+            box-sizing: border-box
+            a
+                text-align: center
+                height: 100%
+                width: 100%
+                @extend %display-flex-column
+                justify-content: space-around
+                outline: none
+                text-decoration: none
+                color: #ffffff
+                &:active
+                    opacity: 0.6
+.open
+    transform: translateX(0)

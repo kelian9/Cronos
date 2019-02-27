@@ -1,0 +1,96 @@
+<div class="page-container">
+  <header>
+    <div class="content-container">
+      <div class="navigation-container">
+        <img src="../assets/images/logo.svg" alt="logotype" class="logo">
+        <nav class="desktop-nav" id="desktop-nav">
+          <li *ngFor="let elem of menu"><a [href]="elem.href">{{ elem.text }}</a></li>
+        </nav>
+        <div class="call-container">
+          <a href="tel:+780020000002" class="telephone"><img src="../assets/images/phone.svg" alt="phone" class="call">&nbsp;&nbsp;&nbsp;8 800 200 000 02</a>
+          <a href="" class="order-call">Заказать звонок</a>
+        </div>
+          <div class="mobile-nav">
+              <app-mobile-nav [menu]="menu"></app-mobile-nav>
+          </div>
+      </div>
+      <div class="main-info">
+         <h3 class="sale">Скидки до конца января</h3>
+         <h1>Декоративный камень собственного производства</h1>
+         <p>Любой цвет и форм-фактор с доставкой в г. Казань</p>
+         <a href="#products">Продукция</a>
+      </div>
+      <!-- Advantages Component -->
+      <app-advantages></app-advantages>
+    </div>
+  </header>
+  <div class="products-container" id="products">
+    <div class="content-container">
+      <!-- Неизвестно кликабельны ли блоки с цветами-->
+      <app-products></app-products>
+    </div>
+  </div>
+  <div class="production-container" id="production">
+    <div class="production-content">
+      <div class="production-heading-container">
+        <h1 class="production-h">Производство</h1>
+        <p class="production-subtitle">Показать как делаем, что делаем, обьяснить просто и понятно, емко.<br>Каждый пункт разбавить фотками, релевантными</p>
+      </div>
+      <div class="process-container">
+        <div class="process-container__row">
+          <img src="../assets/images/process-1.png" alt="process-1">
+          <div class="process-description">
+            <h2 class="process-title"><span class="number">1</span>&nbsp;&nbsp;Лекала</h2>
+            <p class="process-info">Природный камень, при всех достоинствах, ограничен в разнообразии текстуры и цвета. Поэтому дизайнеры предпочитают декоративный камень.</p>
+          </div>
+        </div>
+        <div class="process-container__row">
+          <div class="process-description">
+            <h2 class="process-title"><span class="number">2</span>&nbsp;&nbsp;Гипс</h2>
+            <p class="process-info">Используется декоративный камень с целью облицовки и отделки наружной поверхности жилых и общественных зданий, внутренней отделки стен.</p>
+          </div>
+          <img src="../assets/images/process-2.png" alt="process-2">
+        </div>
+        <div class="process-container__row">
+            <img src="../assets/images/process-1.png" alt="process-3">
+            <div class="process-description">
+              <h2 class="process-title"><span class="number">3</span>&nbsp;&nbsp;Сушка</h2>
+              <p class="process-info">Несложное производство искусственного камня предусматривает использование серого или белого (более дорогой) цемента в качестве связующего элемента, наполнителей.</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Here will be placed projects slider -->
+  <div class="projects-container" id="about">
+      <app-projects></app-projects>
+  </div>
+  <footer class="page-footer" id="contacts">
+    <div class="content-container">
+      <div class="footer-content">
+          <div class="insta-container">
+            <h1>Все наши работы</h1>
+            <!-- Сюда виджет для инсты -->
+            <div class="insta-block"></div>
+          </div>
+          <div class="location-container">
+            <h1>Где мы находимся</h1>
+            <p>г. Кисель на воде, ул. Простоквашино, д. 71</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8982.765551489783!2d49.208400299999994!3d55.74649095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x415eae758f4f3443%3A0xf6ff3d7ce3c14809!2z0JzQsNC60LTQvtC90LDQu9C00YE!5e0!3m2!1sru!2sru!4v1550516611934" width="100%" height="80%" frameborder="0" style="border:0; border-radius: 10px;" allowfullscreen></iframe>
+          </div>
+      </div>
+      <div class="footer">
+        <div class="copyright">
+          <p>© 2019</p>
+          <a href="#products">Продукция</a>
+        </div>
+        <img src="../assets/images/logo.svg" alt="logotype" class="logo">
+        <div class="share-container">
+            <app-share></app-share>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<router-outlet></router-outlet>
