@@ -51,19 +51,7 @@ export class ProductsData {
   ];
   getAllData() {
     this.all = [];
-    for (let i = 0; i < this.facade.length; i++) {
-        const element = this.facade[i];
-        this.all.push(element);
-    }
-    for (let i = 0; i < this.inDecoration.length; i++) {
-        const element = this.inDecoration[i];
-        this.all.push(element);
-    }
-    for (let i = 0; i < this.pavingSlabs.length; i++) {
-        const element = this.pavingSlabs[i];
-        this.all.push(element);
-    }
-    // this.all.reverse();
+    this.all = [].concat(this.facade,this.pavingSlabs,this.inDecoration);
     function sortAll(a,b) {
       return (a.price - b.price);
     }
