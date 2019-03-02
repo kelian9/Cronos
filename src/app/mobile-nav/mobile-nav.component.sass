@@ -94,3 +94,16 @@ nav
                     opacity: 0.6
 .open
     transform: translateX(0)
+.buttonOpened
+    span
+        transition: 0.5s ease-in
+        transform: rotate(180deg)
+        &::before, &::after
+            width: 11px
+            right: 0
+        &::before
+            transform-origin: left
+            transform: rotate(45deg)
+        &::after
+            transform-origin: left
+            transform: rotate(-45deg) translateY(-0.5px)
