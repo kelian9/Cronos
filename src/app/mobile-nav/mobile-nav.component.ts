@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class MobileNavComponent implements OnInit {
   @Input() menu = this.menu;
-  constructor() { }
+  constructor() {}
   openMenu:boolean = false;
   open() {
     if(!this.openMenu) {

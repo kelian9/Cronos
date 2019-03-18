@@ -18,14 +18,14 @@
          <h3 class="sale">Скидки до конца января</h3>
          <h1>Декоративный камень собственного производства</h1>
          <p>Любой цвет и форм-фактор с доставкой в г. Казань</p>
-         <a href="#products">Продукция</a>
+         <button (click)="scrollToElement(target)">Продукция</button>
       </div>
       <!-- Advantages Component -->
       <app-advantages></app-advantages>
     </div>
   </header>
   <div class="products-container" id="products">
-    <div class="content-container">
+    <div class="content-container" #target>
       <!-- Неизвестно кликабельны ли блоки с цветами-->
       <app-products></app-products>
     </div>
@@ -40,13 +40,13 @@
         <div class="process-container__row">
           <img src="../assets/images/process-1.png" alt="process-1">
           <div class="process-description">
-            <h2 class="process-title"><span class="number">1</span>&nbsp;&nbsp;Лекала</h2>
+            <h2 class="process-title"><span class="number">&nbsp;1&nbsp;</span>&nbsp;&nbsp;Лекала</h2>
             <p class="process-info">Природный камень, при всех достоинствах, ограничен в разнообразии текстуры и цвета. Поэтому дизайнеры предпочитают декоративный камень.</p>
           </div>
         </div>
         <div class="process-container__row">
           <div class="process-description">
-            <h2 class="process-title"><span class="number">2</span>&nbsp;&nbsp;Гипс</h2>
+            <h2 class="process-title"><span class="number">&nbsp;2&nbsp;</span>&nbsp;&nbsp;Гипс</h2>
             <p class="process-info">Используется декоративный камень с целью облицовки и отделки наружной поверхности жилых и общественных зданий, внутренней отделки стен.</p>
           </div>
           <img src="../assets/images/process-2.png" alt="process-2">
@@ -54,7 +54,7 @@
         <div class="process-container__row">
             <img src="../assets/images/process-1.png" alt="process-3">
             <div class="process-description">
-              <h2 class="process-title"><span class="number">3</span>&nbsp;&nbsp;Сушка</h2>
+              <h2 class="process-title"><span class="number">&nbsp;3&nbsp;</span>&nbsp;&nbsp;Сушка</h2>
               <p class="process-info">Несложное производство искусственного камня предусматривает использование серого или белого (более дорогой) цемента в качестве связующего элемента, наполнителей.</p>
             </div>
         </div>
@@ -82,7 +82,7 @@
       <div class="footer">
         <div class="copyright">
           <p>© 2019</p>
-          <a href="#products">Продукция</a>
+          <button (click)="scrollToElement(target)">Продукция</button>
         </div>
         <img src="../assets/images/logo.svg" alt="logotype" class="logo">
         <div class="share-container">

@@ -13,6 +13,9 @@ export class AppComponent {
     {href: "#about", text:"О компании"},
     {href: "#contacts", text:"Контакты"}
   ];
-  
+  scrollToElement($element): void {
+    console.log($element);
+    $element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  }
   
 }

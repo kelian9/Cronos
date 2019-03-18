@@ -3,7 +3,8 @@
   <button (click)="open()" [ngClass]="{buttonOpened: openMenu}"><span class="btn-line"></span></button>
 </div>
 <nav [ngClass]="{open: openMenu}">
+  <div class="menu-bg"></div>
   <ul>
-    <li *ngFor="let m of menu"><a [href]="m.href">{{ m.text }}</a></li>
+    <li *ngFor="let m of menu"><a (click)="open()" [href]="m.href">{{ m.text }}</a></li>
   </ul>
 </nav>

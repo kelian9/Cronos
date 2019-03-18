@@ -1,9 +1,9 @@
 <h1>Продукция</h1>
 <ul>
-  <li (click)="getArray(productsButtons[0].array, 0)" [ngClass]="{'active-btn': active[0]}">{{productsButtons[0].text}}</li><span>|</span>
-  <li (click)="getArray(productsButtons[1].array, 1)" [ngClass]="{'active-btn': active[1]}">{{productsButtons[1].text}}</li><span>|</span>
-  <li (click)="getArray(productsButtons[2].array, 2)" [ngClass]="{'active-btn': active[2]}">{{productsButtons[2].text}}</li><span>|</span>
-  <li class="last-li" (click)="getArray(productsButtons[3].array, 3)" [ngClass]="{'active-btn': active[3]}">{{productsButtons[3].text}}</li><span>|</span>
+  <li (click)="getArray(productsButtons[0].array, 0)" [ngClass]="{'active-btn': active[0]}">{{productsButtons[0].text}}</li><span *ngIf="!active[0] && !active[1]">|</span>
+  <li (click)="getArray(productsButtons[1].array, 1)" [ngClass]="{'active-btn': active[1]}">{{productsButtons[1].text}}</li><span *ngIf="!active[1] && !active[2]">|</span>
+  <li (click)="getArray(productsButtons[2].array, 2)" [ngClass]="{'active-btn': active[2]}">{{productsButtons[2].text}}</li><span *ngIf="!active[2] && !active[3]">|</span>
+  <li class="last-li" (click)="getArray(productsButtons[3].array, 3)" [ngClass]="{'active-btn': active[3]}">{{productsButtons[3].text}}</li><span *ngIf="!active[2] && !active[3]">|</span>
 </ul>
 <div class="cards-outer-container">
   <div class="cards-container">
