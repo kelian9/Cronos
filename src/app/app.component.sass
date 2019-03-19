@@ -77,10 +77,11 @@ header
         @extend %display-flex-column
         justify-content: space-between
         margin-top: 100px
-        width: 45%
+        width: 50%
         min-height: 250px
         .sale
-            width: 185px
+            max-width: 220px
+            box-sizing: border-box
             font-size: 13px
             text-transform: uppercase
             color: #FFC38B
@@ -259,6 +260,52 @@ header
         .share-container
             width: 20%
             height: 100%
+@media screen and (max-width: 1230px) and (min-width: 601px)
+    .logo
+        width: 18%
+        max-width: 168px
+    .content-container
+        width: 87%
+        margin-left: 6.5%
+    header
+        .navigation-container
+            nav
+                width: 62%
+                a
+                    font-size: 0.85rem
+            .call-container
+                .telephone
+                    font-size: 12px
+        .main-info
+            width: 100%
+    .page-footer
+        .footer
+            .copyright
+                width: 30%
+@media screen and (max-width: 1000px) and (min-width: 601px)
+    .production-content
+        width: 74%
+        margin-left: 13%
+@media screen and (max-width: 780px) and (min-width: 601px)
+    header
+        .navigation-container
+            nav
+                a
+                    font-size: 0.8rem
+            .call-container
+                .order-call
+                    font-size: 11px
+                img
+                    display: none
+    .page-footer
+        .footer
+            .copyright
+                width: 37%
+@media screen and (max-width: 650px) and (min-width: 601px)
+    .page-footer
+        .footer
+            .copyright
+                width: 40%
 @media screen and (max-width: 600px)
     %display-flex-row-m
         display: flex
@@ -289,8 +336,6 @@ header
         .main-info
             width: 100%
             min-height: 300px
-            .sale
-                max-width: 90%
             h1
                 max-width: 360px
                 font-size: 25px
@@ -366,7 +411,7 @@ header
                     p
                         order: 2
                         font-size: 18px
-                    a
+                    button
                         order: 1
                         position: relative
                         top: -110%

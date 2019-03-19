@@ -10,6 +10,8 @@
     height: 100%
     z-index: 1
     transition: 0.3s
+    background-size: cover
+    background-position: center
 .container
     width: 100%
     height: 100%
@@ -118,9 +120,16 @@
     transform: translateX(-1058px)
 .swipe-next-second
     transform: translateX(-2116px)
+@media screen and (max-width: 1000px) and (min-width: 601px)
+    .container
+        .text-container
+            .heading
+                width: 70%
 @media screen and (max-width: 600px)
     .project-image
         border-radius: 4px
+        background-size: contain 100%
+        background-repeat: no-repeat
     .container
         background: #191924
         display: flex

@@ -1,5 +1,6 @@
 <div class="container">
-  <img [src]="projectSelected.src" alt="Photo of the project" class="project-image"/>
+  <!-- <img [src]="projectSelected.src" alt="Photo of the project" class="project-image"/> -->
+  <div class="project-image" [ngStyle]="{'background-image':'url(' + projectSelected.src + ')'}"></div>
   <div class="text-container">
     <div class="heading">
       <h1>Проекты</h1>

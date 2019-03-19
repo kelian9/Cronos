@@ -37,6 +37,21 @@ export class ProductsComponent implements OnInit {
       }
       this.canShowMore = true;
     }
+    else if(document.documentElement.clientWidth <= 1230) {
+      let index:number;
+      if (array.length >= 12) {
+        index = 12;
+        this.canShowMore = true;
+      }
+      else {
+        index = array.length;
+        this.canShowMore = false;
+      }
+      for (let i = 0; i < index; i++) {
+        const element = array[i];
+        this.array.push(element);
+      }
+    }
     else {
       let index:number;
       if (array.length >= 10) {
