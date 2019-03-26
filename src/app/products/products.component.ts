@@ -31,10 +31,7 @@ export class ProductsComponent implements OnInit {
     this.array = [];
     this.forShowMoreArray = array;
     if (document.documentElement.clientWidth <= 600) {
-      for (let i = 0; i < 4; i++) {
-        const element = array[i];
-        this.array.push(element);
-      }
+      this.array = array.slice(0,4);
       this.canShowMore = true;
     }
     else if(document.documentElement.clientWidth <= 1230) {
@@ -47,10 +44,7 @@ export class ProductsComponent implements OnInit {
         index = array.length;
         this.canShowMore = false;
       }
-      for (let i = 0; i < index; i++) {
-        const element = array[i];
-        this.array.push(element);
-      }
+      this.array = array.slice(0,index);
     }
     else {
       let index:number;
@@ -62,10 +56,7 @@ export class ProductsComponent implements OnInit {
         index = array.length;
         this.canShowMore = false;
       }
-      for (let i = 0; i < index; i++) {
-        const element = array[i];
-        this.array.push(element);
-      }
+      this.array = array.slice(0,index);
     }
     this.buttonShowMore = "Показать еще";
     this.hide = false;
