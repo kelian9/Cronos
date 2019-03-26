@@ -44,6 +44,7 @@ export class ProductsComponent implements OnInit {
         index = array.length;
         this.canShowMore = false;
       }
+      this.array = [];
       this.array = array.slice(0,index);
     }
     else {
