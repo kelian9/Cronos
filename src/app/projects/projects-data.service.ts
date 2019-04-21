@@ -4,22 +4,15 @@ export class ProjectsData {
     // scr указывает путь изображения, selected НЕ ТРОГАТЬ(устанавливать новым слайдам false(результат выбора изначального слайда не изменится, но все же не стоит))
     // i номер нужный нам для методов(равен позиции элемента в массиве)
     private projects:Project[] = [
-        {src: "../assets/images/projects/1.png", selected: true, i:0},
-        {src: "../assets/images/projects/2.png", selected: false, i:1},
-        {src: "../assets/images/projects/3.png", selected: false, i:2},
-        {src: "../assets/images/projects/4.png", selected: false, i:3},
-        {src: "../assets/images/projects/1.png", selected: false, i:4},
-        {src: "../assets/images/projects/2.png", selected: false, i:5},
-        {src: "../assets/images/projects/3.png", selected: false, i:6},
-        {src: "../assets/images/projects/4.png", selected: false, i:7},
-        {src: "../assets/images/projects/1.png", selected: false, i:8},
-        {src: "../assets/images/projects/2.png", selected: false, i:9},
-        {src: "../assets/images/projects/3.png", selected: false, i:10},
-        {src: "../assets/images/projects/4.png", selected: false, i:11},
-        {src: "../assets/images/projects/1.png", selected: false, i:12},
-        {src: "../assets/images/projects/2.png", selected: false, i:13},
-        {src: "../assets/images/projects/3.png", selected: false, i:14},
-        {src: "../assets/images/projects/4.png", selected: false, i:15}
+        {src: "../assets/images/projects/a.png", selected: true, i:0},
+        {src: "../assets/images/projects/s.png", selected: false, i:1},
+        {src: "../assets/images/projects/d.png", selected: false, i:2},
+        {src: "../assets/images/projects/f.png", selected: false, i:3},
+        {src: "../assets/images/projects/g.png", selected: false, i:4},
+        {src: "../assets/images/projects/h.png", selected: false, i:5},
+        {src: "../assets/images/projects/j.png", selected: false, i:6},
+        {src: "../assets/images/projects/5.png", selected: false, i:7},
+        {src: "../assets/images/projects/1.png", selected: false, i:8}
     ];
     
     getProjectsData() {

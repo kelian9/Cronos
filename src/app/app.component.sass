@@ -32,6 +32,7 @@ $font35-text: 16px
     text-decoration: none
     font-size: 18px
     color: #ffffff
+    font-family: 'Roboto', sans-serif
 li
     list-style-type: none
 // Header's styles 
@@ -77,17 +78,18 @@ header
         @extend %display-flex-column
         justify-content: space-between
         margin-top: 100px
-        width: 50%
+        width: 70%
         min-height: 250px
         .sale
-            max-width: 220px
+            max-width: 228px
             box-sizing: border-box
+            padding: 10px 0px
+            border: 1px solid rgba(255, 210, 95, 0.22)
+            border-radius: 4px
+            text-align: center
             font-size: 13px
             text-transform: uppercase
             color: #FFC38B
-            padding: 10px 15px
-            border: 1px solid rgba(255, 210, 95, 0.22)
-            border-radius: 4px
         h1
             font-weight: 900
             line-height: 40px
@@ -124,67 +126,50 @@ header
     padding-bottom: 40px
 .production-container
     width: 100%
-    height: 1036px
+    height: 440px
     padding-bottom: 50px
     background: linear-gradient(180deg, #1A1B20 0%, #191924 100%)
 .production-content
-    width: 54%
+    width: 70%
     height: 100%
-    margin-left: 23%
+    margin-left: 15%
     @extend %display-flex-column
     justify-content: space-around
-    .production-heading-container
-        width: 100%
-        height: 15%
+    align-items: center
+    h1
         @extend %display-flex-column
         justify-content: space-around
+        height: 20%
         text-align: center
-        border-bottom: 1px solid rgba(255, 255, 255, 0.06)
-        h1
-            font-weight: 900
-            line-height: 28px
-            font-size: 26px
-            color: #ffffff
-        p
-            line-height: 24px
-            font-size: 16px
-            text-align: center
-            color: #FFFFFF
-            opacity: 0.7
-    .process-container
+        font-family: 'Raleway', sans-serif
+        font-style: normal
+        font-weight: 900
+        font-size: 26px
+        line-height: 34px
+        color: #FFFFFF
+    .production-content_main
         width: 100%
-        height: 75%
-        @extend %display-flex-column
-        justify-content: space-between
-        .process-container__row
-            height: 30%
-            width: 100%
-            @extend %display-flex-row
-            img
-                width: 45%
-                height: 100%
-                border-radius: 6px
-            .process-description
-                width: 45%
-                height: 70%
-                .process-title
-                    font-weight: 600
-                    line-height: 24px
-                    font-size: 16px
-                    color: #FFFFFF
-                    span
-                        line-height: 16px
-                        font-size: 16px
-                        text-align: center
-                        padding: 8px
-                        border-radius: 100%
-                        border: 1px solid #FFA1A1
-                .process-info
-                    margin-top: 10px
-                    line-height: 24px
-                    font-size: 16px
-                    color: #FFFFFF
-                    opacity: 0.7
+        min-height: 320px
+        @extend %display-flex-row
+        align-items: flex-start
+        img
+            width: 224px
+            height: 230px
+            border-radius: 6px
+        .production-content_main_text-content
+            width: 72%
+            height: 100%
+            @extend %display-flex-column
+            justify-content: space-between
+            p
+                text-align: left
+                font-family: 'Raleway', sans-serif
+                font-style: normal
+                font-weight: normal
+                font-size: 16px
+                line-height: 24px
+                color: #FFFFFF
+                opacity: 0.7
 .projects-container
     width: 100%
     height: 730px
@@ -278,14 +263,21 @@ header
                     font-size: 12px
         .main-info
             width: 100%
+    .production-content
+        width: 80%
+        margin-left: 10%
     .page-footer
         .footer
             .copyright
                 width: 30%
 @media screen and (max-width: 1000px) and (min-width: 601px)
+    .production-container
+        height: 450px
     .production-content
-        width: 74%
-        margin-left: 13%
+        width: 90%
+        margin-left: 5%
+        .production-content_main
+            min-height: 370px
 @media screen and (max-width: 780px) and (min-width: 601px)
     header
         .navigation-container
@@ -297,6 +289,15 @@ header
                     font-size: 11px
                 img
                     display: none
+    .production-container
+        height: 560px
+    .production-content
+        width: 90%
+        margin-left: 5%
+        img
+            width: 200px
+        .production-content_main
+            min-height: 370px
     .page-footer
         .footer
             .copyright
@@ -348,37 +349,27 @@ header
             a
                 width: 130px
     .products-container
-        min-height: 1100px
+        min-height: 500px
         padding-bottom: 30px
     .production-container
         margin-top: 0px
-        height: 1350px
+        min-height: 950px
         padding-top: 30px
         .production-content
             width: 90%
             margin-left: 5%
-            .production-heading-container
-                width: 100%
-                height: 16%
-                text-align: center
-            .process-container
-                width: 100%
-                height: 77%
-                .process-container__row
+            h1
+                height: 50px
+            .production-content_main
+                flex-direction: column
+                align-items: center
+                height: 88%
+                img
+                    width: 224px
+                    height: 230px
+                .production-content_main_text-content
                     width: 100%
-                    height: 32.5%
-                    @extend %display-flex-column-m
-                    img
-                        width: 100%
-                        height: 47%
-                        order: 1
-                    .process-description
-                        width: 100%
-                        height: 45%
-                        order: 2
-                        span
-                            font-size: 16px
-                            padding: 7px
+                    height: 70%
     .projects-container
         height: 450px
     .page-footer

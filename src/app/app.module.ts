@@ -10,6 +10,7 @@ import { ProductsData } from './products/products-data.service';
 import { ProjectsComponent } from './projects/projects.component';
 import { ProjectsData } from './projects/projects-data.service';
 import { ShareComponent } from './share/share.component';
+import { RequestComponent } from './request/request.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ShareComponent } from './share/share.component';
     MobileNavComponent,
     ProductsComponent,
     ProjectsComponent,
-    ShareComponent
+    ShareComponent,
+    RequestComponent
   ],
   imports: [
     BrowserModule,

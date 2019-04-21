@@ -31,8 +31,15 @@ export class ProductsComponent implements OnInit {
     this.array = [];
     this.forShowMoreArray = array;
     if (document.documentElement.clientWidth <= 600) {
-      this.array = array.slice(0,4);
       this.canShowMore = true;
+      if (array.length <= 4) {
+        this.canShowMore = false;
+        this.array = array.slice(0,array.length);
+      }
+      else {
+        this.array = array.slice(0,4);
+        this.canShowMore = true;
+      }
     }
     else if(document.documentElement.clientWidth <= 1230) {
       let index:number;
@@ -110,9 +117,17 @@ export class ProductsComponent implements OnInit {
       }
       this.array = [];
       if (document.documentElement.clientWidth <= 600) {
-        for (let i = 0; i < 4; i++) {
-          const element = this.forShowMoreArray[i];
-          this.array.push(element);
+        if(this.forShowMoreArray.length < 4) {
+          for (let i = 0; i < this.forShowMoreArray.length; i++) {
+            const element = this.forShowMoreArray[i];
+            this.array.push(element);
+          }
+        }
+        else {
+          for (let i = 0; i < 4; i++) {
+            const element = this.forShowMoreArray[i];
+            this.array.push(element);
+          }
         }
         this.buttonShowMore = "Показать еще";
       }
