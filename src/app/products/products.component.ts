@@ -16,6 +16,7 @@ export class ProductsComponent implements OnInit {
   pavingSlabs:Product[] = [];
   inDecoration:Product[] = [];
   productsButtons:Buttons[] = [];//Кнопки
+  containerHeight:string="500px";
 
   constructor(private data:ProductsData) {}
 
@@ -35,6 +36,7 @@ export class ProductsComponent implements OnInit {
       if (array.length <= 4) {
         this.canShowMore = false;
         this.array = array.slice(0,array.length);
+        this.containerHeight = "300px";
       }
       else {
         this.array = array.slice(0,4);
@@ -63,6 +65,7 @@ export class ProductsComponent implements OnInit {
       else {
         index = array.length;
         this.canShowMore = false;
+        this.containerHeight = "300px";
       }
       this.array = array.slice(0,index);
     }
@@ -117,18 +120,10 @@ export class ProductsComponent implements OnInit {
       }
       this.array = [];
       if (document.documentElement.clientWidth <= 600) {
-        if(this.forShowMoreArray.length < 4) {
-          for (let i = 0; i < this.forShowMoreArray.length; i++) {
-            const element = this.forShowMoreArray[i];
-            this.array.push(element);
-          }
-        }
-        else {
           for (let i = 0; i < 4; i++) {
             const element = this.forShowMoreArray[i];
             this.array.push(element);
           }
-        }
         this.buttonShowMore = "Показать еще";
       }
       else {
@@ -152,6 +147,12 @@ export class ProductsComponent implements OnInit {
   
 
   ngOnInit() {
+    this.all = this.data.getAllData();
+    this.facade = this.data.getFacadeData();
+    this.pavingSlabs = this.data.getPavingSlabsData();
+    this.inDecoration = this.data.getInDecorationData();
+    this.productsButtons = this.data.getButtonsData();
+    this.forShowMoreArray = this.data.getAllData();
     if (document.documentElement.clientWidth <= 600) {
       for (let i = 0; i < 4; i++) {
         const element = this.data.getAllData()[i];
@@ -159,17 +160,15 @@ export class ProductsComponent implements OnInit {
       };
     }
     else {
-      for (let i = 0; i < 10; i++) {
-        const element = this.data.getAllData()[i];
-        this.array.push(element);
-      };
+      const element = this.data.getAllData();
+      if (element.length >=10) {
+        this.array = element.slice(0,10);
+      }
+      else {
+        this.array = element;
+        this.canShowMore = false;
+      }
     }
-    this.all = this.data.getAllData();
-    this.facade = this.data.getFacadeData();
-    this.pavingSlabs = this.data.getPavingSlabsData();
-    this.inDecoration = this.data.getInDecorationData();
-    this.productsButtons = this.data.getButtonsData();
-    this.forShowMoreArray = this.data.getAllData();
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-request',
@@ -9,6 +9,11 @@ export class RequestComponent implements OnInit {
 
   constructor() { }
 
+  @Output() onOpenModal = new EventEmitter<boolean>();
+  
+  openModal(open) {
+    this.onOpenModal.emit(open);
+  }
   ngOnInit() {
   }
 

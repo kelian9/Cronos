@@ -17,5 +17,9 @@ export class AppComponent {
     console.log($element);
     $element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
   }
-  
+  modal:boolean = false;
+  openModal(e) {
+    this. modal = e;
+    console.log(this.modal);
+  }
 }

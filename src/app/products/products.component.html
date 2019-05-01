@@ -5,7 +5,7 @@
   <li (click)="getArray(productsButtons[2].array, 2)" [ngClass]="{'active-btn': active[2]}">{{productsButtons[2].text}}</li><span *ngIf="!active[2] && !active[3]">|</span>
   <li class="last-li" (click)="getArray(productsButtons[3].array, 3)" [ngClass]="{'active-btn': active[3]}">{{productsButtons[3].text}}</li><span *ngIf="!active[2] && !active[3]">|</span>
 </ul>
-<div class="cards-outer-container">
+<div class="cards-outer-container" [ngStyle]="{'min-height':containerHeight}">
   <div class="cards-container">
     <div class="card" *ngFor="let elem of array">
       <div class="image-container">

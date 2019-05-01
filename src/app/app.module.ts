@@ -11,6 +11,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ProjectsData } from './projects/projects-data.service';
 import { ShareComponent } from './share/share.component';
 import { RequestComponent } from './request/request.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { RequestComponent } from './request/request.component';
     ProductsComponent,
     ProjectsComponent,
     ShareComponent,
-    RequestComponent
+    RequestComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,

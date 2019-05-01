@@ -42,14 +42,12 @@ ul
 .cards-outer-container
     width: 100%
     margin-top: 15px
-    min-height: 550px
     @extend %display-flex
     flex-direction: column
     align-items: center
     justify-content: space-between
     .cards-container
         margin: 0
-        margin-left: -5.5%
         padding: 0
         width: 100%
         height: 88%
@@ -57,13 +55,15 @@ ul
         justify-content: flex-start
         flex-direction: row
         flex-wrap: wrap
+        & *:not(:nth-child(5n+1))
+            margin-left: 1.5%
         .card
-            margin-top: 10px
-            margin-left: 3%
-            width: 17%
-            height: 45%
+            margin-top: 15px
+            width: 200px
+            height: 205px
             @extend %display-flex
             flex-direction: column
+            justify-content: space-between
             align-items: flex-start
             .image-container
                 width: 100%
@@ -110,6 +110,7 @@ ul
                 width: 100%
                 height: 30px
                 @extend %display-flex
+                justify-content: flex-start
                 .price
                     line-height: 32px
                     font-size: 15px
@@ -117,8 +118,11 @@ ul
                     text-decoration-line: line-through
                     color: #B2B2B2
                 .sale
+                    margin-left: 20px
                     line-height: 24px
                     font-size: 15px
+                    font-style: normal
+                    font-weight: normal
                     text-align: right
                     color: #000000
                     span
@@ -145,19 +149,45 @@ ul
             outline: none
             img
                 transition: 0.6s
-@media screen and (max-width: 1230px) and (min-width: 800px)
+@media screen and (min-width: 1898px)
     .cards-outer-container
         .cards-container
-            margin-left: -4%
+            & *:not(:nth-child(5n+1))
+                margin-left: 0
+            & *:not(:nth-child(6n+1))
+                margin-left: 2.5%
             .card
-                margin-left: 2%
-                width: 23%
-@media screen and (max-width: 799px) and (min-width: 601px)
+                width: 220px
+@media screen and (max-width: 1897px) and (min-width: 1618px)
     .cards-outer-container
         .cards-container
+            & *:not(:nth-child(5n+1))
+                margin-left: 3%
             .card
-                margin-left: 10/3%
-                width: 30%
+                width: 220px
+@media screen and (max-width: 1345px) and (min-width: 1025px)
+    .cards-outer-container
+        .cards-container
+            & *:not(:nth-child(5n+1))
+                margin-left: 0
+            & *:not(:nth-child(4n+1))
+                margin-left: 3.5%
+@media screen and (max-width: 1025px) and (min-width: 795px)
+    .cards-outer-container
+        .cards-container
+            & *:not(:nth-child(5n+1))
+                margin-left: 0
+            & *:not(:nth-child(3n+1))
+                margin-left: 6.5%
+@media screen and (max-width: 794px) and (min-width: 601px)
+    .cards-outer-container
+        .cards-container
+            & *:not(:nth-child(5n+1))
+                margin-left: 0
+            & *:not(:nth-child(2n+1))
+                margin-left: 12.5%
+            .card
+                width: 240px
 @media screen and (max-width: 600px)
     ul
         overflow-x: scroll
