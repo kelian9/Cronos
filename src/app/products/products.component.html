@@ -9,7 +9,8 @@
   <div class="cards-container">
     <div class="card" *ngFor="let elem of array">
       <div class="image-container">
-        <img [src]="elem.href" alt="image" class="card-image">
+        <!-- <img [src]="elem.href" alt="image" class="card-image"> -->
+        <div class="card-image" [ngStyle]="{ 'background-image' : 'url(' + elem.href + ')' }"></div>
         <div class="colors">
           <div class="color beige" [ngClass]="{'selected': selected(elem, elem.colors.beige)}" *ngIf="elem.colors.beige" (click)="changeColor(elem, 'beige')"></div>
           <div class="color black" [ngClass]="{'selected': selected(elem, elem.colors.black)}" *ngIf="elem.colors.black" (click)="changeColor(elem, 'black')"></div>

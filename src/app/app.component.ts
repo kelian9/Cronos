@@ -10,7 +10,7 @@ export class AppComponent {
   menu:Nav[] = [
     {href: "#products", text:"Продукция"},
     {href: "#production", text:"Производство"},
-    {href: "#about", text:"О компании"},
+    {href: "#projects", text:"Проекты"},
     {href: "#contacts", text:"Контакты"}
   ];
   scrollToElement($element): void {

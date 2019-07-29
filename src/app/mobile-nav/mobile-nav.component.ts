@@ -6,10 +6,12 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./mobile-nav.component.sass']
 })
 export class MobileNavComponent implements OnInit {
-  @Input() menu = this.menu;
+  @Input() menu;
+
   constructor() {}
-  openMenu:boolean = false;
-  open() {
+
+  public openMenu:boolean = false;
+  public open() {
     if(!this.openMenu) {
         this.openMenu = true;
     }
@@ -17,6 +19,7 @@ export class MobileNavComponent implements OnInit {
       this.openMenu = false;
     }
   }
+
   ngOnInit() {
   }
 

@@ -3,11 +3,16 @@
     <div class="modal">
         <div class="modal-inner">
             <h1>Оставить заявку<div class="close" (click)="close()"><span></span></div></h1>
-            <form action="" method="post">
-                <input type="text" placeholder="Имя">
-                <input type="tel" placeholder="+7 (___) ___-__-__" required>
-                <button type="submit">Отправить</button>
+            <form novalidate (ngSubmit)="sendData(data,form )" #form="ngForm">
+                <input type="text" #name='ngModel' name="name" placeholder="Имя" [(ngModel)]="data.name" required minlength="3">
+                <input type="tel" #tel='ngModel' name="tel" placeholder="+7 (___) ___-__-__" [(ngModel)]="data.tel" 
+                required 
+                pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$">
+                <button type="submit" [disabled]="btnClicked && form.invalid" [ngClass]="{'disabled': btn.disabled}" #btn>Отправить</button>
             </form>
+            <ul *ngIf="formSubmitted && form.invalid" class="errors-container">
+                <li>Проверьте правильность введенных данных</li>
+            </ul>
         </div>
     </div>
 </div>

@@ -84,6 +84,7 @@ export class ProductsComponent implements OnInit {
   canShowMore:boolean = true;
   hide:boolean = false;// для стрелочки
   arr:Product[] = [];//массив для функций скрытия(в него копируется исходный и из него устанавливаются значения)
+  
   showMore(array, parentArray = this.forShowMoreArray) {
     //если массив может увеличиваться
     if (this.buttonShowMore == "Показать еще") {
