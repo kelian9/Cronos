@@ -16,6 +16,7 @@ export class AdvantagesComponent implements OnInit {
   ];
   constructor() { }
   
+  public advantage:boolean = false;
   ngOnInit() {
   }
 
